@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static',filename='dist/css/lightbox.min.css')}}">
-  <title>Document</title>
+  <title>Reddit Image Scraper</title>
 </head>
 
 <body>
-  <div class="flex mb-4">
+  <div class="flex mb-4 h-screen">
 
-    <div class=" grid w-1/2 bg-gray-400 ml-8 mt-8 mr-8 place-items-center">
-      <form class="w-full max-w-lg" method="post" action="{{ url_for('submit') }}">
+    <div class="border shadow-lg w-1/2 rounded-lg ml-8 mr-8 mt-2 mb-2 max-h-screen">
+      <form class="ml-8 mt-8 w-full max-w-lg p-2" method="post" action="{{ url_for('submit') }}">
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -91,11 +91,25 @@
           Scrape
         </button>
       </form>
+      <form class="ml-8 mt-8 w-full max-w-lg p-2" method="post" action="{{ url_for('download') }}">
+        <div class="{{info}}" role="alert">
+          <p>{{message}}</p>
+        </div>
+        <button class="{{download_button}}" type="submit">
+          Download
+        </button>
+      </form>
+      <div class="{{error}}" role="alert">
+        <span class="block sm:inline">{{exception}}</span>
+      </div>
+      <div class="{{d_info}}" role="alert">
+        <p>{{d_message}}</p>
+      </div>
     </div>
 
 
 
-    <div class="w-1/2 bg-gray-500 mr-8 mt-8 max-h-screen overflow-y-auto">
+    <div class="border shadow-lg w-1/2 rounded-lg mr-8 mt-2 mb-2 max-h-screen overflow-y-auto">
       <section class="overflow-hidden text-gray-700 ">
         <div class="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
           <div class="flex flex-wrap -m-1 md:-m-2">
