@@ -2,7 +2,7 @@
 This app scrapes images from a selected subreddit.
 
 <p align="center">
-  <img src="https://media.giphy.com/media/C4InRDS1RbMRbpIRAV/giphy.gif" style="height:600px;" >
+  <img src="https://github.com/Ahmed-Z/redditImageScraper/blob/master/scraper-demo.gif" style="height:600px;" >
 </p>
 
 # Installation
